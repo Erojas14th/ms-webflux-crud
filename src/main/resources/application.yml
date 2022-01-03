@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: develop
+
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: action-rock
+
+
+---
+spring:
+  profiles: develop
+
+
+server:
+  port: 8081
+
+
+logging:
+  level:
+    root: INFO
+    com.erojas.reactive: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+---
+spring:
+  profiles: testing
+
+server:
+  port: 8082
