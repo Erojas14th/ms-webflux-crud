@@ -16,6 +16,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+		<!-- Jacoco -->
+		<jacoco.version>0.8.1</jacoco.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -93,6 +95,25 @@
 						</compilerArg>
 					</compilerArgs>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*com/erojas/reactive/mode/*.class</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
