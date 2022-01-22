@@ -27,6 +27,9 @@ logging:
 ---
 spring:
   profiles: testing
+  data:
+    mongodb:
+      database: mongodb
 
 server:
   port: 8082
